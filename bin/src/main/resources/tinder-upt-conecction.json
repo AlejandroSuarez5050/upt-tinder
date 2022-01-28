@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tinder-upt",
+  "private_key_id": "6987c42d7e9d1bbf5c008269ad2b3917e481b714",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCumNDSQhuWZL3Q\nIA5olEPGweH4Vhyb9jD0wabqjlepnx5ZCVOLMv3/oTVZOh0xb1CrNg22FPPf2SY0\ndfrI9VP0MI7NC46hR0X183gza6tfE/aQoJhhFD7BKdLxp80HVwrI2w/wSH7p+iCl\nIp7/1FqOFuYGnS8MfZtMaYxRJwE9R/rhjrKf+XjhbKTdYgR5pOtuwVaLNp+MmD9O\nXUCBTG5dd5JBy9xCkTFiqQDl8nI/YuX9Rx47zoB5IWIDv0OHRE5OxQizl+iq3bNJ\nFtUoaDaKkrIAIyAsZT4Kzq6wqbDDrd0v+IdTl1hfBy4lBIEROitOWLGK7TUgdpV1\ngfkOXrAdAgMBAAECggEAQ6xjtDt/aemeUN879nkRVCauKY1nBWSFUTkGM3/8pnhQ\nUP52bUvUe5LGlNEbo5+byuDmq56vcCJA1rCsBdxhMBLqJrvGCukPSueVvYiMIgwg\n06oLpgUs1b4aTyRVKfUo7vVJ1j6jQpl6sccbjdmHR+/ENOgT5mmBGjsG8iWGK3Po\njegq+zbGOV3xufpKg1keqo4JNSs3THN15UYs9mIiEKUAAh0WE27uJ4vPASPIXkkG\nOlIHELW5fE674kIjTJIZj1W1vnDhZutk5SwWvZjfgwPYeh8i6Jktlyc8z4CTL5QO\nbIYYvAUrvLgMou8cUBiJ4hx4D1LLNUEso7KwRfh8mQKBgQDjSwAlAtvjrO/6WWVr\n6R4CTzom4sbyiarsG9+cTRY8tKK78g/0jsVHlcLlpteExa58lRza0ivXOPK/IV1c\npEZ6my8O+8AK59i5f05PPggIoR4RRwc3P+yfJI1eQMP0/Dw7SEOxqtDRoESHQgD0\njAL55hXwc0bkpL/1Zq2o0o/HHwKBgQDEpgJW/1ubsZzx3kPIGIXC+KkSE73vuxVz\nrl5BnagCgcyBlcPDk+ZXgQ13IK6YPEaTvanv2+lOOfOof2/ar2sr3nwlF5PSULUU\nY2bO5zcR/0VOkWfjHxoWcNGM1jws2iLSqAdXFD9nV+gwTLvsJd6g0o80L0OGZlgi\nrfJduz8NQwKBgQCAFg/qy4Wm9Bn4dtBU03X5zzPyHfIHU9ViYQLOThKt+w2J5Ith\nQeOix56hVDg3tj7yLgWouq/CBXGmi+LVBi5BgZovU2eRvb3AKyGyPj7Avir3iZNj\naz6pICwaZV0IfexjbAHZ6Wzr9OkpX+Sx6wTyVtseOZhF2SHj5Q0QCjjD+QKBgEhR\nGIkvzVubXLEh4OFkC0ThNyPbuLzBmyj4ldchiFirrS52ihCRgmLppa8KiMqZWAca\n97Sqtci7zRxJCTRt0EbIwfTOD+GHJqCB0ZwDMaBftPgoxwCiPnDEOnvFiUmhSq8X\ndeOTIaH6lPu2LGGyp4WTCXDSdM2nM4BFYd0QcCaLAoGBAMLpb6KbNHVVEQ7riWro\n+ZbMNa5Ov9inP61EUCjEUkwBYutT3/QImfGZe9PjLZh0CUP+A18/XkVr28fRX/Gc\nEIMU1kmbo4hBhTGVK0jitBYmI8h+Fx2LNPxQnDAo9fLvzM4gSMoSUG3R3dFNXME4\nzk7UXmpnLWp6HQKDcDCQ9e+/\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1g8tg@tinder-upt.iam.gserviceaccount.com",
+  "client_id": "111436349624332554505",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1g8tg%40tinder-upt.iam.gserviceaccount.com"
+}
