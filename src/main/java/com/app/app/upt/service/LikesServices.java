@@ -14,6 +14,8 @@ import java.util.List;
 public interface LikesServices {
     List<LikesDTO> listLikes();
     
+    List<LikesDTO> listLike(String id);
+    
     Boolean addLike(LikesDTO peticiones);
          
      Boolean deleteLike(String id);

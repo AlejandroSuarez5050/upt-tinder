@@ -15,6 +15,8 @@ public interface PeticionesServices {
     
     List<PeticionesDTO> listUsers();
     
+    List<PeticionesDTO> listUser(String id);
+                    
     Boolean addUser(PeticionesDTO peticiones);
     
      Boolean editUser(String id, PeticionesDTO peticiones);

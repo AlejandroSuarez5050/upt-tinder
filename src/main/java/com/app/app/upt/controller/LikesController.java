@@ -27,6 +27,11 @@ public class LikesController {
         return new ResponseEntity(service.listLikes(), HttpStatus.OK);
     }
     
+    @GetMapping(value="/like-list/{id}")
+    public ResponseEntity listLike(@PathVariable(value="id") String id) {
+        return new ResponseEntity(service.listLike(id), HttpStatus.OK);
+    }
+    
      @PostMapping(value="/register-like")
       public ResponseEntity addLike(@RequestBody LikesDTO post) {
           return new ResponseEntity(service.addLike(post), HttpStatus.OK);

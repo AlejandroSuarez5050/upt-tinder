@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.app.app.upt.firebase.FirebaseInitializer;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
@@ -51,6 +52,27 @@ public class PeticionesServiceImpl implements PeticionesServices{
          } 
     
     }
+    
+    @Override
+        public List<PeticionesDTO> listUser(String id) {
+           List<PeticionesDTO> response = new ArrayList<>();
+           PeticionesDTO peticiones;
+           try {
+                DocumentReference ref = getCollection().document(id);
+                ApiFuture<DocumentSnapshot> futureDoc = ref.get();
+                DocumentSnapshot document = futureDoc.get();
+    
+                if(document.exists()) {
+                    peticiones = document.toObject(PeticionesDTO.class);
+                    peticiones.setId(document.getId());
+                    response.add(peticiones);
+                    }
+                return response;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                return null;
+            } 
+        }
 
     @Override
     public Boolean addUser(PeticionesDTO peticiones) {
@@ -67,7 +89,7 @@ public class PeticionesServiceImpl implements PeticionesServices{
              return Boolean.FALSE;
          }
     }
-
+           
     @Override
     public Boolean editUser(String id, PeticionesDTO peticiones) {
        

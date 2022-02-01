@@ -24,6 +24,7 @@ public class PeticionesController {
     @Autowired
     private PeticionesServices service;
     
+    /* Metodos de prueba
     @GetMapping(value="/saludo")
     public String saludo() {
         return "Hola Mundo";
@@ -33,10 +34,16 @@ public class PeticionesController {
     public String nombre(@PathVariable(value="name") String nombre) {
         return "Hola "+nombre;
     }
+*/
     
     @GetMapping(value="/users-list")
     public ResponseEntity listUsers() {
         return new ResponseEntity(service.listUsers(), HttpStatus.OK);
+    }
+    
+    @GetMapping(value="/user-list/{id}")
+    public ResponseEntity listUser(@PathVariable(value="id") String id) {
+          return new ResponseEntity(service.listUser(id), HttpStatus.OK);
     }
     
       @PostMapping(value="/register-user")
