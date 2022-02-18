@@ -19,4 +19,20 @@ public interface LikesServices {
     Boolean addLike(LikesDTO peticiones);
          
      Boolean deleteLike(String id);
+     
+     List<LikesDTO> listSuperLikes();
+    
+    List<LikesDTO> listSuperLike(String id);
+    
+    Boolean addSuperLike(LikesDTO peticiones);
+         
+     Boolean deleteSuperLike(String id);
+     
+      List<LikesDTO> listDislikes();
+    
+    List<LikesDTO> listDislike(String id);
+    
+    Boolean addDislike(LikesDTO peticiones);
+         
+     Boolean deleteDislike(String id);
 }

@@ -105,6 +105,159 @@ public class LikesServiceImpl implements LikesServices {
          }    
     }
     
+     @Override
+    public List<LikesDTO> listSuperLikes() {
+        List<LikesDTO> response = new ArrayList<>();
+        LikesDTO peticiones;
+        
+        ApiFuture<QuerySnapshot> querySnapshotApiFuture = getCollectionSuperLike().get();
+        
+         try {
+             for(DocumentSnapshot doc : querySnapshotApiFuture.get().getDocuments()) {
+              peticiones = doc.toObject(LikesDTO.class);
+              
+              peticiones.setId(doc.getId());
+              
+              response.add(peticiones);
+             }
+             return response;
+         } catch (Exception ex) {
+             ex.printStackTrace();
+             return null;
+         } 
+    }
+    
+    @Override
+    public List<LikesDTO> listSuperLike(String id) {
+          List<LikesDTO> response = new ArrayList<>();
+          LikesDTO peticiones;
+          try {
+                DocumentReference ref = getCollectionSuperLike().document(id);
+                ApiFuture<DocumentSnapshot> futureDoc = ref.get();
+                DocumentSnapshot document = futureDoc.get();
+    
+                if(document.exists()) {
+                    peticiones = document.toObject(LikesDTO.class);
+                    peticiones.setId(document.getId());
+                    response.add(peticiones);
+                    }
+                return response;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                return null;
+            }     
+    }
+    
+    @Override
+    public Boolean addSuperLike(LikesDTO peticiones) {
+        Map<String, Object> docData = getDocData(peticiones);
+        
+        ApiFuture<WriteResult> writeResultApiFuture = getCollectionSuperLike().document().create(docData);
+        
+         try {
+             if(null != writeResultApiFuture.get()) {
+                 return Boolean.TRUE;
+             }
+             return Boolean.FALSE;
+                } catch (Exception ex) {
+                    return Boolean.FALSE;
+                }    
+        }
+
+    @Override
+    public Boolean deleteSuperLike(String id) {
+        ApiFuture<WriteResult> writeResultApiFuture = getCollectionSuperLike().document(id).delete();
+        
+        try {
+             if(null != writeResultApiFuture.get()) {
+                 return Boolean.TRUE;
+             }
+             return Boolean.FALSE;
+         } catch (Exception ex) {
+             return Boolean.FALSE;
+         }    
+    }
+    
+    @Override
+    public List<LikesDTO> listDislikes() {
+        List<LikesDTO> response = new ArrayList<>();
+        LikesDTO peticiones;
+        
+        ApiFuture<QuerySnapshot> querySnapshotApiFuture = getCollectionDislike().get();
+        
+         try {
+             for(DocumentSnapshot doc : querySnapshotApiFuture.get().getDocuments()) {
+              peticiones = doc.toObject(LikesDTO.class);
+              
+              peticiones.setId(doc.getId());
+              
+              response.add(peticiones);
+             }
+             return response;
+         } catch (Exception ex) {
+             ex.printStackTrace();
+             return null;
+         } 
+    }
+    
+    @Override
+    public List<LikesDTO> listDislike(String id) {
+          List<LikesDTO> response = new ArrayList<>();
+          LikesDTO peticiones;
+          try {
+                DocumentReference ref = getCollectionDislike().document(id);
+                ApiFuture<DocumentSnapshot> futureDoc = ref.get();
+                DocumentSnapshot document = futureDoc.get();
+    
+                if(document.exists()) {
+                    peticiones = document.toObject(LikesDTO.class);
+                    peticiones.setId(document.getId());
+                    response.add(peticiones);
+                    }
+                return response;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                return null;
+            }     
+    }
+    
+    @Override
+    public Boolean addDislike(LikesDTO peticiones) {
+        Map<String, Object> docData = getDocData(peticiones);
+        
+        ApiFuture<WriteResult> writeResultApiFuture = getCollectionDislike().document().create(docData);
+        
+         try {
+             if(null != writeResultApiFuture.get()) {
+                 return Boolean.TRUE;
+             }
+             return Boolean.FALSE;
+                } catch (Exception ex) {
+                    return Boolean.FALSE;
+                }    
+        }
+
+    @Override
+    public Boolean deleteDislike(String id) {
+        ApiFuture<WriteResult> writeResultApiFuture = getCollectionDislike().document(id).delete();
+        
+        try {
+             if(null != writeResultApiFuture.get()) {
+                 return Boolean.TRUE;
+             }
+             return Boolean.FALSE;
+         } catch (Exception ex) {
+             return Boolean.FALSE;
+         }    
+    }
+    
+    private CollectionReference getCollectionDislike() {
+        return firebase.getFirestore().collection("dislike");
+    }
+     private CollectionReference getCollectionSuperLike() {
+        return firebase.getFirestore().collection("super-like");
+    }
+    
     private CollectionReference getCollection() {
         return firebase.getFirestore().collection("like");
     }

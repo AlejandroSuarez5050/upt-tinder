@@ -41,5 +41,45 @@ public class LikesController {
       public ResponseEntity deleteLike(@PathVariable(value="id") String id){
           return new ResponseEntity(service.deleteLike(id), HttpStatus.OK);
       }
+      
+      @GetMapping(value="/super-likes-list")
+    public ResponseEntity listSuperLikes() {
+        return new ResponseEntity(service.listSuperLikes(), HttpStatus.OK);
+    }
+    
+    @GetMapping(value="/super-like-list/{id}")
+    public ResponseEntity listSuperLike(@PathVariable(value="id") String id) {
+        return new ResponseEntity(service.listSuperLike(id), HttpStatus.OK);
+    }
+    
+     @PostMapping(value="/super-register-like")
+      public ResponseEntity addSuperLike(@RequestBody LikesDTO post) {
+          return new ResponseEntity(service.addSuperLike(post), HttpStatus.OK);
+      }
+      
+      @DeleteMapping(value="/{id}/delete-super-like")
+      public ResponseEntity deleteSuperLike(@PathVariable(value="id") String id){
+          return new ResponseEntity(service.deleteSuperLike(id), HttpStatus.OK);
+      }
+      
+            @GetMapping(value="/dislikes-list")
+    public ResponseEntity listDislikes() {
+        return new ResponseEntity(service.listDislikes(), HttpStatus.OK);
+    }
+    
+    @GetMapping(value="/dislike-list/{id}")
+    public ResponseEntity listDislike(@PathVariable(value="id") String id) {
+        return new ResponseEntity(service.listDislike(id), HttpStatus.OK);
+    }
+    
+     @PostMapping(value="/register-dislike")
+      public ResponseEntity addDislike(@RequestBody LikesDTO post) {
+          return new ResponseEntity(service.addDislike(post), HttpStatus.OK);
+      }
+      
+      @DeleteMapping(value="/{id}/delete-dislike")
+      public ResponseEntity deleteDislike(@PathVariable(value="id") String id){
+          return new ResponseEntity(service.deleteDislike(id), HttpStatus.OK);
+      }
     
 }
