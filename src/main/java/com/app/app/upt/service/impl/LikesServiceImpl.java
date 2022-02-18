@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.app.app.upt.firebase.FirebaseInitializer;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
@@ -51,6 +52,27 @@ public class LikesServiceImpl implements LikesServices {
              ex.printStackTrace();
              return null;
          } 
+    }
+    
+    @Override
+    public List<LikesDTO> listLike(String id) {
+          List<LikesDTO> response = new ArrayList<>();
+          LikesDTO peticiones;
+          try {
+                DocumentReference ref = getCollection().document(id);
+                ApiFuture<DocumentSnapshot> futureDoc = ref.get();
+                DocumentSnapshot document = futureDoc.get();
+    
+                if(document.exists()) {
+                    peticiones = document.toObject(LikesDTO.class);
+                    peticiones.setId(document.getId());
+                    response.add(peticiones);
+                    }
+                return response;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                return null;
+            }     
     }
     
     @Override
